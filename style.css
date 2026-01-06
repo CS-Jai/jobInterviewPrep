@@ -22,6 +22,14 @@ display: none;
     font-style: normal;
 }
 
+.roundBorderAndBG{
+    background-color: #1A1A33;
+    /*Makes bottom of navbar rounded*/
+    border-radius: 2rem;
+    /*Gives the navbar an outline*/
+    border: 0.5rem solid #2A2A4A;
+}
+
 /*                                            HEADER / NAVBAR STUFF                                                   */
 
 header{
@@ -41,11 +49,6 @@ header{
     /*Makes our items line up in the middle of cross axis (horz axis since direction is column)*/
     align-items: center;
     /*Nav bar color*/
-    background-color: #1A1A33;
-    /*Makes bottom of navbar rounded*/
-    border-radius: 2rem;
-    /*Gives the navbar an outline*/
-    border: 0.5rem solid #2A2A4A;
 }
 
 .navbar ul{
@@ -91,11 +94,11 @@ header{
 
 }
 
-.navbar a:hover{
-    /*When you hover the thingys at the top they are pink/transparent and rounded*/
-    background: linear-gradient(90deg, #FF6FB1, #FF4D9D, #C63CFF);
-    border-radius: 2rem;
-}
+/*.navbar a:hover{*/
+/*    !*When you hover the thingys at the top they are pink/transparent and rounded*!*/
+/*    background: linear-gradient(90deg, #FF6FB1, #FF4D9D, #C63CFF);*/
+/*    border-radius: 2rem;*/
+/*}*/
 
 .siteName{
     /*Makes everything in a row and top cenetered*/
@@ -156,11 +159,6 @@ header{
     align-items: flex-start;
     /*Set width to 24 instead of 25 because with boarder it doesnt fit*/
     width: 24%;
-    background-color: #1A1A33;
-    /*Makes bottom of navbar rounded*/
-    border-radius: 2rem;
-    /*Gives the navbar an outline*/
-    border: 0.5rem solid #2A2A4A;
     /*Breathing room from the side of box*/
     padding: 1rem;
     /*Removes underlines from links*/
@@ -177,10 +175,10 @@ header{
 }
 
 /*Whne you hover the project box itll change bg to gradient*/
-.projectBox:hover{
-    background: linear-gradient(90deg, #FF6FB1, #FF4D9D, #C63CFF);
-    border-radius: 2rem;
-}
+/*.projectBox:hover{*/
+/*    background: linear-gradient(90deg, #FF6FB1, #FF4D9D, #C63CFF);*/
+/*    border-radius: 2rem;*/
+/*}*/
 
 /*Makes text close*/
 .projectBox p{
@@ -190,7 +188,7 @@ header{
 
 /*Centers photo only*/
 .projectBox img{
-    width: 50%;
+    width: 100%;
     align-self: center;
     padding-bottom: 1rem;
 }
@@ -218,9 +216,6 @@ header{
 
 footer{
     width: 100%;
-    background-color: #1A1A33;
-    border: 0.5rem solid #2A2A4A;
-    border-radius:  2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -232,19 +227,53 @@ footer{
 }
 
 footer img{
-    width: 5rem;
+    width: 4rem;
 }
 
 /*                                             END OF FOOTER STUFF                                                    */
 
+.spreadHover{
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
 
+.spreadHover::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, #FF6FB1, #FF4D9D, #C63CFF);
+    border-radius: 2rem;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 1000ms ease;
+    z-index: -1;
+}
+
+.spreadHover:hover::before{
+    transform: scale(1);
+}
 
 /*                                                  HOME STUFF                                                        */
 
-.threeByThreeGrid{
+.homePageAboutMe{
     display: grid;
+    width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.homePageAboutMe img{
     width: 100%;
-    align-self: stretch;
-    grid-template-rows: repeat(3, 10rem);
-    grid-template-columns: repeat(3, 10rem);
+    grid-row: span 1;
+    grid-column: span 1;
+
+    border-radius: 10rem;
+    margin: 1rem;
+}
+
+.homeMain{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
