@@ -17,7 +17,7 @@ display: none;
 /*Sets up our custom ttf font*/
 @font-face {
     font-family: "yeuleFont";
-    src: url("CinzelDecorative-Bold.ttf") format("truetype");
+    src: url("../fonts/CinzelDecorative-Bold.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
